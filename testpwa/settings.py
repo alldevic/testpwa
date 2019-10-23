@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'webpush',
 ]
 
 MIDDLEWARE = [
@@ -103,9 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Novokuznetsk'
 
 USE_I18N = True
 
@@ -118,3 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+WEBPUSH_SETTINGS = {
+    "VAPID_PUBLIC_KEY": "BM0Fkc991AGlhNpkLeSWXd23pE_Vgr57LSiGmnmb3PE2ULoyZLnl5YJ8W6F3VxLlyMIYpmJv7tLkL3flcCw5gKc",
+    "VAPID_PRIVATE_KEY": "A43Z-owkwPAL5wnzNxPt_Bv2uPuCqG0Hlei-bFHeMbE",
+    "VAPID_ADMIN_EMAIL": "beliy_ns@kuzro.ru"
+}
