@@ -25,7 +25,7 @@ SECRET_KEY = '-xsp5*@e9k2+(y^-phd3j@_9p0d60y9shc3%k)w1^b)h=+plf('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '23238519.ngrok.io']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'testpwa.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,19 +88,29 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
+WEBPUSH_SETTINGS = {
+    "VAPID_PUBLIC_KEY":
+    "BM0Fkc991AGlhNpkLeSWXd23pE_Vgr57LSiGmnmb3PE2ULoyZLnl5YJ8W6F3VxLlyMIYpmJv7tLkL3flcCw5gKc",
+    "VAPID_PRIVATE_KEY": "A43Z-owkwPAL5wnzNxPt_Bv2uPuCqG0Hlei-bFHeMbE",
+    "VAPID_ADMIN_EMAIL": "beliy_ns@kuzro.ru"
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -121,8 +131,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-WEBPUSH_SETTINGS = {
-    "VAPID_PUBLIC_KEY": "BM0Fkc991AGlhNpkLeSWXd23pE_Vgr57LSiGmnmb3PE2ULoyZLnl5YJ8W6F3VxLlyMIYpmJv7tLkL3flcCw5gKc",
-    "VAPID_PRIVATE_KEY": "A43Z-owkwPAL5wnzNxPt_Bv2uPuCqG0Hlei-bFHeMbE",
-    "VAPID_ADMIN_EMAIL": "beliy_ns@kuzro.ru"
-}
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
